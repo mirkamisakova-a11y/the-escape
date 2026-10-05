@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Escape — Editor</title>
+  <link rel="stylesheet" href="css/engine.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1><a href="index.html">The Escape</a> <span>— Editor</span></h1>
+    <button id="new-button">New</button>
+    <button id="open-button">Open…</button>
+    <button id="save-button">Save</button>
+    <button id="play-button" class="primary">▶ Play test</button>
+    <input id="file-input" type="file" accept=".json,application/json" hidden>
+  </header>
+
+  <div class="editor">
+    <aside>
+      <section>
+        <h2>Game</h2>
+        <div class="fields">
+          <label>Title <input id="game-title" type="text"></label>
+          <div class="fields-2">
+            <label>Width <input id="game-width" type="number" min="1"></label>
+            <label>Height <input id="game-height" type="number" min="1"></label>
+          </div>
+          <label>Background <input id="game-background" type="color"></label>
+        </div>
+      </section>
+      <section>
+        <h2>Objects</h2>
+        <ul id="object-list" class="object-list"></ul>
+        <button id="add-object-button">+ Add object</button>
+        <p class="hint" style="margin-top: 10px">Objects lower in the list are drawn on top.</p>
+      </section>
+    </aside>
+
+    <main class="canvas-area">
+      <div id="canvas-frame" class="canvas-frame"></div>
+    </main>
+
+    <aside id="properties"></aside>
+  </div>
+
+  <dialog id="play-dialog" class="play-dialog">
+    <div class="topbar">
+      <h1 id="play-title">Play test</h1>
+      <button id="restart-play-button">Restart</button>
+      <button id="close-play-button">Close</button>
+    </div>
+    <div id="play-container" class="play-container"></div>
+  </dialog>
+
+  <script src="js/engine.js"></script>
+  <script src="js/editor.js"></script>
+</body>
+</html>

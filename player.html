@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Escape — Player</title>
+  <link rel="stylesheet" href="css/engine.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1><a href="index.html">The Escape</a> <span id="game-title">— Player</span></h1>
+    <button id="restart-button" hidden>Restart</button>
+    <button id="open-button" class="primary">Open game…</button>
+    <input id="file-input" type="file" accept=".json,application/json" hidden>
+  </header>
+  <main class="player-main">
+    <div id="empty-state" class="player-empty">
+      <p>Open a game file (<code>.json</code>) to play, or drop one here.</p>
+      <p id="error" class="player-error" hidden></p>
+    </div>
+    <div id="player-frame" class="player-frame" hidden></div>
+  </main>
+  <script src="js/engine.js"></script>
+  <script src="js/player.js"></script>
+</body>
+</html>
