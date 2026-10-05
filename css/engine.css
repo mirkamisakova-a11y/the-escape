@@ -1,0 +1,52 @@
+/* Styles for the game stage, used by both the player and the editor. */
+
+.escape-stage {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  container-type: inline-size;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.escape-object {
+  position: absolute;
+  box-sizing: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.escape-stage [hidden] {
+  display: none !important;
+}
+
+.escape-stage.is-playing .escape-object.is-clickable {
+  cursor: pointer;
+}
+
+.escape-stage.is-playing .escape-object.is-clickable:hover {
+  filter: brightness(1.15) drop-shadow(0 0 0.6cqw rgba(255, 255, 255, 0.35));
+}
+
+.escape-message {
+  position: absolute;
+  left: 50%;
+  bottom: 4%;
+  transform: translateX(-50%);
+  max-width: 80%;
+  padding: 1.2cqw 2.4cqw;
+  border-radius: 0.8cqw;
+  background: rgba(10, 10, 14, 0.85);
+  color: #f4f1ea;
+  font: 500 clamp(12px, 2.4cqw, 26px) / 1.4 system-ui, sans-serif;
+  text-align: center;
+  white-space: pre-wrap;
+  pointer-events: none;
+  animation: escape-message-in 0.2s ease-out;
+}
+
+@keyframes escape-message-in {
+  from { opacity: 0; transform: translate(-50%, 0.6cqw); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
